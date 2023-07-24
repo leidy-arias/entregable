@@ -1,0 +1,76 @@
+/* public/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+#opciones {
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#formularios div {
+ /* display: none;*/
+  margin-top: 10px;
+}
+
+#formularios label {
+ /* display: none;*/
+  margin-bottom: 5px;
+}
+
+#formularios input[type="text"][type="email"] {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#opcionesAdicionales {
+ /*display: none;*/
+  margin-top: 20px;
+}
+
+#opcionesAdicionales h2 {
+  margin-bottom: 10px;
+}
+
+#opcionesAdicionales label {
+  /*display: block;*/
+  margin-bottom: 5px;
+}
+
+#opcionesAdicionales input[type="text"][type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#formularios button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#formularios button:hover {
+  background-color: #0056b3;
+}
+#especialidad {
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

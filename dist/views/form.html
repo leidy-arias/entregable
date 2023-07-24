@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de contacto</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <h1>Selecciona una opción:</h1>
+  <select id="opciones" onchange="mostrarFormulario()">
+    <option value="seleccionar">Seleccionar</option>
+    <option value="formulario1">Pacientes</option>
+    <option value="formulario2">Doctores</option>
+  </select>
+
+  <div id="formularios">
+    <!-- Formulario 1 -->
+    <div id="formulario1" style="display: none;">
+      <h1>Formulario de contacto Pacientes</h1>
+    <form id="formulario1" action="/submit" method="post">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="text">Numero de cedula:</label>
+      <input type="text" id="text" name="text" required>
+      <label for="text">Edad:</label>
+      <input type="text" id="text" name="text" required>
+      <label for="text">Telefono:</label>
+      <input type="text" id="text" name="text" required>
+      <h1>Selecciona una opción:</h1>
+      <select id="especialidad">
+        <option value="seleccionar">Seleccionar</option>
+        <option value="medicina">Medicina general</option>
+        <option value="cardiologia">Cardiología</option>
+        <option value="medicina_interna">Medicina interna</option>
+        <option value="dermatología">Dermatología</option>
+        <option value="rehabilitación_fisica">Rehabilitación física</option>
+        <option value="psicologia">Psicología</option>
+        <option value="odontologia">Odontología</option>
+        <option value="radiologia">Radiología</option>
+      </select>
+      <button type="submit">Enviar</button>
+    </form>
+    </div>
+
+    <!-- Formulario 2 -->
+    <div id="formulario2" style="display: none;">
+      <h1>Formulario de contacto doctores</h1>
+      <form id="formulario2" action="/submit" method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="text">Consultorio:</label>
+        <input type="text" id="text" name="text" required>
+        <h1>Selecciona una opción:</h1>
+        <select id="especialidad">
+          <option value="seleccionar">Seleccionar</option>
+          <option value="medicina">Medicina general</option>
+          <option value="cardiologia">Cardiología</option>
+          <option value="medicina_interna">Medicina interna</option>
+          <option value="dermatología">Dermatología</option>
+          <option value="rehabilitación_fisica">Rehabilitación física</option>
+          <option value="psicologia">Psicología</option>
+          <option value="odontologia">Odontología</option>
+          <option value="radiologia">Radiología</option>
+        </select>
+        <button type="submit">Enviar</button>
+        
+      </form>
+    </div>
+
+    
+  </div>
+
+  <script>
+    function mostrarFormulario() {
+      const opcionesDesplegable = document.getElementById('opciones');
+      const formulariosDiv = document.getElementById('formularios');
+      const opcionesAdicionalesDiv = document.getElementById('opcionesAdicionales');
+
+      // Ocultar todos los formularios
+      const formularios = formulariosDiv.getElementsByTagName('div');
+      for (let i = 0; i < formularios.length; i++) {
+        console.log('ingresaa: ', formularios[i]);
+        formularios[i].style.display = 'none';
+      }
+      console.log('opcionesAdicionalesDiv: ', opcionesAdicionalesDiv);
+      /*opcionesAdicionalesDiv.style.display = 'none';*/
+      
+
+      // Mostrar el formulario correspondiente a la opción seleccionada
+      if (opcionesDesplegable.value !== 'seleccionar') {
+        const formularioSeleccionado = document.getElementById(opcionesDesplegable.value);
+        console.log('formularioSeleccionado:_ ', formularioSeleccionado);
+        formularioSeleccionado.style.display = 'block';
+        /*opcionesAdicionalesDiv.style.display = 'block';*/
+      }
+    }
+    
+  </script>
+</body>
+</html>
